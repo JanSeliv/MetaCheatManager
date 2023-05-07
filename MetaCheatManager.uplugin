@@ -6,7 +6,7 @@
 	"Description": "Plugin allows customize command names by 'CheatName =' meta for the functions in the Meta Cheat Manager subclass",
 	"Category": "Programming",
 	"CreatedBy": "Yevhenii Selivanov",
-	"CreatedByURL": "https://github.com/JanSeliv/Bomber",
+	"CreatedByURL": "https://github.com/JanSeliv/MetaCheatManager",
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "mailto:janseliw@gmail.com",
