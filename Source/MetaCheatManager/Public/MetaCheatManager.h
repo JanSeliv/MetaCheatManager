@@ -9,19 +9,40 @@
 #include "MetaCheatManager.generated.h"
 
 /**
- * Allows customize command names by 'CheatName =' meta for the functions in the Meta Cheat Manager subclass.
+ * The Meta Cheat Manager plugin introduces a feature to Unreal Engine 5
+ * that allows you to call cheat functions with custom meta names from the console command,
+ * similar to the 'Your.Cheat.Name' format. This functionality helps replace the
+ * 'meta=(OverrideNativeName="Your.Cheat.Name"))' feature, which was available in Unreal Engine 4
+ * but became unavailable in Unreal Engine 5 due to the removal of Blueprint Nativization.
  *
- * Only two next steps are required to see your function with custom name in console:
- * 1. Inherit from this class instead of 'UCheatManager' to use this feature.
- * 2. Add 'CheatName =' meta to the functions in your subclass to customize command names like on example below:
- * 	UFUNCTION(meta = (CheatName = "Your.Cheat.Name"))
- *	void YourCheatFunction();
+ * To use this feature, follow these steps:
  *
- * Notice#1: 'Exec' specifier is not required anymore for such functions in your subclass.
- * Notice#2: it works even without creating any blueprint, so only your code class would be enough, but you can have BP if you want.
- * Notice#3: It automatically creates the DefaultMetaCheatManager.ini config on the editor startup to the Config folder of your project
- * to have your cheat commands with custom Cheat Names in the packaged build as well, you don't need to do anything specific about it.
- * Such solution is used because any metadata can be obtained only in the Editor, so we store it in the config file for the build.
+ * Step 1: Create a new class that inherits from UMetaCheatManager (not 'UCheatManager').
+ *
+ * Step 2: In your Player Controller's constructor, set your new cheat manager:
+ *         ```
+ *         AMyPlayerController::AMyPlayerController()
+ *         {
+ *             CheatClass = UMyCheatManager::StaticClass();
+ *         }
+ *         ```
+ * Step 3: Add meta=(CheatName="Your.Cheat.Name") to your subclass's functions to
+ *         customize command names, for example:
+ *         ```
+ *         UFUNCTION(meta = (CheatName = "Your.Cheat.Name"))
+ *         void YourCheatFunction();
+ *         ```
+ * Things to keep in mind:
+ * - The 'Exec' specifier is not required for these functions. This differs from the
+ *   default cheat manager where it's necessary. In this case, 'CheatName' automatically
+ *   implies these are 'Exec' functions.
+ * - This setup works even if you have your cheat manager implemented only in code.
+ *   However, you can also have an inherited blueprint if you prefer.
+ * - Upon editor startup, the plugin automatically creates a DefaultMetaCheatManager.ini
+ *   config. This file, stored in your project's Config folder, ensures your custom cheat
+ *   commands work in the packaged build without any extra steps on your part. This is
+ *   necessary as metadata can only be read in the Editor, so it's saved in the config file
+ *   for the build.
  */
 UCLASS(Config = "MetaCheatManager", DefaultConfig)
 class METACHEATMANAGER_API UMetaCheatManager : public UCheatManager
@@ -29,7 +50,7 @@ class METACHEATMANAGER_API UMetaCheatManager : public UCheatManager
 	GENERATED_BODY()
 
 	/** Returns all cheat commands exposed by this cheat manager.
-	 * @see UMetaCheatManager::AllCheatCommandsInternal */
+	 * @see UMetaCheatManager::AllCheatCommands */
 	UFUNCTION(BlueprintPure)
 	const FORCEINLINE TArray<FMetaCheatCommand>& GetAllCheatCommands() const { return AllCheatCommands; }
 
@@ -40,7 +61,7 @@ class METACHEATMANAGER_API UMetaCheatManager : public UCheatManager
 protected:
 	/** Contains all cheat commands exposed by this cheat manager.
 	 * Is automatically saved into config file while in editor to have these commands available in builds where is no access to meta data. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Config, meta = (BlueprintProtected, DisplayName = "All Cheat Commands"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Config, meta = (BlueprintProtected))
 	TArray<FMetaCheatCommand> AllCheatCommands;
 
 	/** Is overridden to initialize all cheat commands on editor startup. */
