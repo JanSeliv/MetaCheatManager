@@ -3,6 +3,8 @@
 #include "MetaCheatCommand.h"
 //---
 #include "ConsoleSettings.h"
+//---
+#include UE_INLINE_GENERATED_CPP_BY_NAME(MetaCheatCommand)
 
 // Contains empty cheat command
 const FMetaCheatCommand FMetaCheatCommand::EmptyCommand = FMetaCheatCommand();

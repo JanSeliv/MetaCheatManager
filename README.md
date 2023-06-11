@@ -16,7 +16,7 @@ Also, explore this [game project repository](https://github.com/JanSeliv/Bomber)
 
 ## 📅 Changelog
 #### 2023-05-31
-- 🎉 Initial public release.
+- 🎉 Initial public release on Unreal Engine 5.2
 
 ## 📫 Feedback & Contribution
 
