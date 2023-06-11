@@ -3,6 +3,8 @@
 #include "MetaCheatManager.h"
 //---
 #include "Engine/Console.h"
+//---
+#include UE_INLINE_GENERATED_CPP_BY_NAME(MetaCheatManager)
 
 // Returns the cheat command associated with specified CheatName meta value
 const FMetaCheatCommand& UMetaCheatManager::GetCheatCommandByCheatName(const FName& CheatName) const
