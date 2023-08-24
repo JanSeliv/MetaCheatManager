@@ -1,15 +1,15 @@
 ﻿// Copyright (c) Yevhenii Selivanov
 
-#include "MetaCheatManager.h"
+#include "MetaCheatManagerExtension.h"
 //---
 #include "MetaCheatManagerUtils.h"
 //---
 #include "Engine/Console.h"
 //---
-#include UE_INLINE_GENERATED_CPP_BY_NAME(MetaCheatManager)
+#include UE_INLINE_GENERATED_CPP_BY_NAME(MetaCheatManagerExtension)
 
-// Is overridden to initialize all cheat commands on editor startup
-void UMetaCheatManager::PostInitProperties()
+// Is overridden to initialize all cheat commands on startup
+void UMetaCheatManagerExtension::PostInitProperties()
 {
 	Super::PostInitProperties();
 
@@ -22,14 +22,14 @@ void UMetaCheatManager::PostInitProperties()
 }
 
 // Is overridden to convert meta CheatName Your.Cheat.Name to the function name YourCheatFunction whenever user enters the command
-bool UMetaCheatManager::ProcessConsoleExec(const TCHAR* Cmd, FOutputDevice& Ar, UObject* Executor)
+bool UMetaCheatManagerExtension::ProcessConsoleExec(const TCHAR* Cmd, FOutputDevice& Ar, UObject* Executor)
 {
 	const bool bProcessed = UMetaCheatManagerUtils::TryProcessConsoleExec(this, Cmd, Ar, Executor);
 	return bProcessed || Super::ProcessConsoleExec(Cmd, Ar, Executor);
 }
 
 // Garbage things before destroying the Cheat Manager
-void UMetaCheatManager::BeginDestroy()
+void UMetaCheatManagerExtension::BeginDestroy()
 {
 	UConsole::RegisterConsoleAutoCompleteEntries.RemoveAll(this);
 
@@ -37,7 +37,7 @@ void UMetaCheatManager::BeginDestroy()
 }
 
 // Is bound to return all initialized meta cheat commands to see them in the console
-void UMetaCheatManager::RegisterAutoCompleteEntries(TArray<FAutoCompleteCommand>& OutCommands) const
+void UMetaCheatManagerExtension::RegisterAutoCompleteEntries(TArray<FAutoCompleteCommand>& OutCommands) const
 {
 	UMetaCheatManagerUtils::RegisterAutoCompleteEntries(/*out*/OutCommands, AllCheatCommands);
 }
