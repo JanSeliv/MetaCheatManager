@@ -15,6 +15,8 @@ Visit our [Release](https://github.com/JanSeliv/MetaCheatManager/releases) page 
 Also, explore this [game project repository](https://github.com/JanSeliv/Bomber) to see the Meta Cheat Manager in action.
 
 ## 📅 Changelog
+####
+- Added 'Cheat Manager Extensions' support, useful for plugins and Game Feature modules populating their own cheats.
 #### 2023-05-31
 - 🎉 Initial public release on Unreal Engine 5.2
 
