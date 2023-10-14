@@ -8,6 +8,7 @@ public class MetaCheatManager : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 		CppStandard = CppStandardVersion.Latest;
+		bEnableNonInlinedGenCppWarnings = true;
 
 		PublicDependencyModuleNames.AddRange(new[]
 			{
