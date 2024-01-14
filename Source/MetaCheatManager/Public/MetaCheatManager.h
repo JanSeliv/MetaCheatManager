@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/CheatManager.h"
+#include "MetaCheatManagerInterface.h"
 //---
 #include "MetaCheatCommand.h"
 //---
@@ -46,17 +47,14 @@
  */
 UCLASS(Config = "MetaCheatManager", DefaultConfig)
 class METACHEATMANAGER_API UMetaCheatManager : public UCheatManager
+                                               , public IMetaCheatManagerInterface
 {
 	GENERATED_BODY()
 
+public:
 	/** Returns all cheat commands exposed by this cheat manager.
 	 * @see UMetaCheatManager::AllCheatCommands */
-	UFUNCTION(BlueprintPure)
-	const FORCEINLINE TArray<FMetaCheatCommand>& GetAllCheatCommands() const { return AllCheatCommands; }
-
-	/** Returns the cheat command associated with specified CheatName meta value. */
-	UFUNCTION(BlueprintPure)
-	virtual const FMetaCheatCommand& GetCheatCommandByCheatName(const FName& CheatName) const;
+	virtual const FORCEINLINE TArray<FMetaCheatCommand>& GetAllCheatCommands() const override { return AllCheatCommands; }
 
 protected:
 	/** Contains all cheat commands exposed by this cheat manager.
@@ -67,9 +65,6 @@ protected:
 	/** Is overridden to initialize all cheat commands on editor startup. */
 	virtual void PostInitProperties() override;
 
-	/** Called when CheatManager is created to allow any needed initialization. */
-	virtual void InitCheatManager() override;
-
 	/** Is overridden to convert a meta CheatName 'Your.Cheat.Name'
 	 * to the function name 'YourCheatFunction' to process the call whenever user enters the command. */
 	virtual bool ProcessConsoleExec(const TCHAR* Cmd, FOutputDevice& Ar, UObject* Executor) override;
@@ -78,12 +73,5 @@ protected:
 	virtual void BeginDestroy() override;
 
 	/** Is bound to return all initialized meta cheat commands to see them in the console. */
-	virtual void RegisterAutoCompleteEntries(TArray<FAutoCompleteCommand>& Commands) const;
-
-	/** Finds and saves all cheat commands marked with 'CheatName' metadata.
-	 * @warning its implementation is editor-only
-	 * since we don't have access to any meta data in builds,
-	 * but you can override it to use your own implementation.
-	 * @see UMetaCheatManager::AllCheatCommandsInternal */
-	virtual void InitAllCheatCommands();
+	virtual void RegisterAutoCompleteEntries(TArray<FAutoCompleteCommand>& OutCommands) const override;
 };
