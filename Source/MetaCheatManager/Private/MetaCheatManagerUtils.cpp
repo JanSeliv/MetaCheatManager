@@ -78,7 +78,7 @@ void UMetaCheatManagerUtils::RegisterAutoCompleteEntries(TArray<FAutoCompleteCom
 }
 
 // Processes the console execution of meta cheat commands
-bool UMetaCheatManagerUtils::TryProcessConsoleExec(const TScriptInterface<IMetaCheatManagerInterface> CheatManager, const TCHAR* const Cmd, FOutputDevice& Ar, UObject* Executor)
+bool UMetaCheatManagerUtils::TryProcessConsoleExec(const TScriptInterface<IMetaCheatManagerInterface>& CheatManager, const TCHAR* const Cmd, FOutputDevice& Ar, UObject* Executor)
 {
 	if (!ensureMsgf(CheatManager, TEXT("ASSERT: [%i] %s:\n'CheatManager' is not valid!"), __LINE__, *FString(__FUNCTION__)))
 	{

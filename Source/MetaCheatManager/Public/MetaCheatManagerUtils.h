@@ -28,10 +28,10 @@ public:
 	/** Returns the cheat command associated with specified CheatName meta value. */
 	UFUNCTION(BlueprintPure, Category = "C++")
 	static const FMetaCheatCommand& GetCheatCommandByCheatName(FName CheatName, const TArray<FMetaCheatCommand>& InAllCheatCommands);
-	
+
 	/** Registers auto-complete entries for the cheat commands. */
 	static void RegisterAutoCompleteEntries(TArray<struct FAutoCompleteCommand>& OutCommands, const TArray<FMetaCheatCommand>& InAllCheatCommands);
-	
+
 	/** Processes the console execution of meta cheat commands. */
-	static bool TryProcessConsoleExec(const TScriptInterface<IMetaCheatManagerInterface> CheatManager, const TCHAR* const Cmd, FOutputDevice& Ar, UObject* Executor);
+	static bool TryProcessConsoleExec(const TScriptInterface<IMetaCheatManagerInterface>& CheatManager, const TCHAR* const Cmd, FOutputDevice& Ar, UObject* Executor);
 };
