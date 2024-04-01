@@ -4,6 +4,8 @@ The Meta Cheat Manager plugin introduces a feature to Unreal Engine 5 that allow
 
 This functionality helps replace the '_meta=(OverrideNativeName="Your.Cheat.Name"))_' feature, which was available in Unreal Engine 4 but became unavailable in Unreal Engine 5 due to the removal of Blueprint Nativization.
 
+![MetaCheatManager](https://github.com/JanSeliv/MetaCheatManager/assets/20540872/1343fbb6-d8b6-453a-99d3-99c7eb5ca5db)
+
 ## 📚 Documentation
 
 Detailed documentation about the Meta Cheat Manager can be found [here](https://docs.google.com/document/d/15kXwC05paFdwwmPC4Pi8xTuUq20-s7lC_EfOtFDcp0w).
