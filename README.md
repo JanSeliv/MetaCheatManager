@@ -1,4 +1,24 @@
-# \>_ Meta Cheat Manager
+<a href="https://github.com/JanSeliv/MetaCheatManager/blob/main/LICENSE">![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)</a>
+<a href="https://www.unrealengine.com/">![Unreal Engine](https://img.shields.io/badge/Unreal-5.3-dea309?style=flat&logo=unrealengine)</a>
+
+<br/>
+<p align="center">
+<a href="https://github.com/JanSeliv/MetaCheatManager">
+<img src="https://github.com/JanSeliv/MetaCheatManager/blob/main/Resources/Icon128.png?raw=true" alt="Logo" width="80" height="80">
+</a>
+<h3 align="center">&gt;_ Meta Cheat Manager</h3>
+<p align="center">
+Run cheats with '<em>Category.Command</em>' console format
+<br/>
+<br/>
+<a href="https://discord.gg/jbWgwDefnE"><strong>Join our Discord ››</strong></a>
+<br/>
+<a href="https://github.com/JanSeliv/MetaCheatManager/releases">Releases</a>
+·
+<a href="https://docs.google.com/document/d/15kXwC05paFdwwmPC4Pi8xTuUq20-s7lC_EfOtFDcp0w">Docs</a>
+</p>
+
+## 🌟 About
 
 The Meta Cheat Manager plugin introduces a feature to Unreal Engine 5 that allows you to call cheat functions with custom meta names from the console command in the 'Your.Cheat.Name' format.
 
@@ -6,9 +26,7 @@ This functionality helps replace the '_meta=(OverrideNativeName="Your.Cheat.Name
 
 ![MetaCheatManager](https://github.com/JanSeliv/MetaCheatManager/assets/20540872/1343fbb6-d8b6-453a-99d3-99c7eb5ca5db)
 
-## 📚 Documentation
-
-Detailed documentation about the Meta Cheat Manager can be found [here](https://docs.google.com/document/d/15kXwC05paFdwwmPC4Pi8xTuUq20-s7lC_EfOtFDcp0w).
+![MetaCheatManager](https://github.com/user-attachments/assets/f5527004-9096-469a-9f03-2a8a5a9fe3ff)
 
 ## 🎓 Sample Projects
 
