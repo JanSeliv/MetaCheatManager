@@ -26,8 +26,6 @@ This functionality helps replace the '_meta=(OverrideNativeName="Your.Cheat.Name
 
 ![MetaCheatManager](https://github.com/JanSeliv/MetaCheatManager/assets/20540872/1343fbb6-d8b6-453a-99d3-99c7eb5ca5db)
 
-![MetaCheatManager](https://github.com/user-attachments/assets/f5527004-9096-469a-9f03-2a8a5a9fe3ff)
-
 ## 🎓 Sample Projects
 
 Visit our [Release](https://github.com/JanSeliv/MetaCheatManager/releases) page for two sample projects showcasing the Meta Cheat Manager, one with blueprints and another in C++.
