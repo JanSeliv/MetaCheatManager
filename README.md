@@ -1,5 +1,5 @@
 <a href="https://github.com/JanSeliv/MetaCheatManager/blob/main/LICENSE">![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)</a>
-<a href="https://www.unrealengine.com/">![Unreal Engine](https://img.shields.io/badge/Unreal-5.3-dea309?style=flat&logo=unrealengine)</a>
+<a href="https://www.unrealengine.com/">![Unreal Engine](https://img.shields.io/badge/Unreal-5.4-dea309?style=flat&logo=unrealengine)</a>
 
 <br/>
 <p align="center">
@@ -24,16 +24,16 @@ The Meta Cheat Manager plugin introduces a feature to Unreal Engine 5 that allow
 
 This functionality helps replace the '_meta=(OverrideNativeName="Your.Cheat.Name"))_' feature, which was available in Unreal Engine 4 but became unavailable in Unreal Engine 5 due to the removal of Blueprint Nativization.
 
-![MetaCheatManager](https://github.com/JanSeliv/MetaCheatManager/assets/20540872/1343fbb6-d8b6-453a-99d3-99c7eb5ca5db)
+![MetaCheatManager](https://github.com/user-attachments/assets/065f9fa7-a452-44bb-809d-99be7328eaf5)
 
 ## 🎓 Sample Projects
 
-Visit our [Release](https://github.com/JanSeliv/MetaCheatManager/releases) page for two sample projects showcasing the Meta Cheat Manager, one with blueprints and another in C++.
+Visit our [Release](https://github.com/JanSeliv/MetaCheatManager/releases) page showcasing the Meta Cheat Manager.
 
 Also, explore this [game project repository](https://github.com/JanSeliv/Bomber) to see the Meta Cheat Manager in action.
 
 ## 📅 Changelog
-#### 
+#### 2024-12-26
 - Updated to **Unreal Engine 5.4**.
 #### 2024-01-14
 - Updated to **Unreal Engine 5.3**.
@@ -47,7 +47,7 @@ Feedback and contributions from the community are highly appreciated!
 
 If you'd like to contribute, please fork the project and create a pull request targeting the `develop` branch.
 
-If you've found a bug or have an idea for a new feature, please open a new issue on GitHub. Thank you!
+If you've found a bug or have an idea for a new feature, please open a new issue on GitHub or join our [Discord](https://discord.gg/jbWgwDefnE). Thank you!
 
 ## 📜 License
 
