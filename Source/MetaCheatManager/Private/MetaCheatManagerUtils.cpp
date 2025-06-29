@@ -108,6 +108,6 @@ bool UMetaCheatManagerUtils::TryProcessConsoleExec(const TScriptInterface<IMetaC
 	// and append it with the value that was passed to the cheat to process the call
 	// YourFunctionCheat Value
 	constexpr bool bForceCallWithNonExec = true;
-	const FString CmdString = CheatCommand.FunctionName.ToString() + ParsedCmd;
+	const FString CmdString = FString::Printf(TEXT("%s %s"), *CheatCommand.FunctionName.ToString(), ParsedCmd);
 	return CheatManagerObj->CallFunctionByNameWithArguments(*CmdString, Ar, Executor, bForceCallWithNonExec);
 }
