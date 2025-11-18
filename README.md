@@ -1,5 +1,5 @@
 <a href="https://github.com/JanSeliv/MetaCheatManager/blob/main/LICENSE">![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)</a>
-<a href="https://www.unrealengine.com/">![Unreal Engine](https://img.shields.io/badge/Unreal-5.5-dea309?style=flat&logo=unrealengine)</a>
+<a href="https://www.unrealengine.com/">![Unreal Engine](https://img.shields.io/badge/Unreal-5.6-dea309?style=flat&logo=unrealengine)</a>
 
 <br/>
 <p align="center">
@@ -33,6 +33,8 @@ Visit our [Release](https://github.com/JanSeliv/MetaCheatManager/releases) page 
 Also, explore this [game project repository](https://github.com/JanSeliv/Bomber) to see the Meta Cheat Manager in action.
 
 ## 📅 Changelog
+#### 2025-11-17
+- Updated to **Unreal Engine 5.6**.
 #### 2025-06-29
 - Updated to **Unreal Engine 5.5**.
 #### 2024-12-26
